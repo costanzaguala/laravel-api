@@ -2,7 +2,11 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+// API
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\ContactController;
+
 
 
 /*
@@ -26,4 +30,9 @@ Route::name('api.')->group(function() {
         'index',
         'show'
     ]);
+
+    Route::resource('/contacts', ContactController::class)->only([
+        'store',
+    ]);
+
 });
